@@ -1,0 +1,12 @@
+127.0.0.1 - - [19/May/2017:10:53:08 +0200] "GET / HTTP/1.1" 404 961
+127.0.0.1 - - [19/May/2017:10:53:09 +0200] "GET /Sneak/WEB-INF/classes/com/sneak/util/ExcelUtil.java HTTP/1.1" 404 959
+127.0.0.1 - - [19/May/2017:10:53:09 +0200] "GET /favicon.ico HTTP/1.1" 404 983
+127.0.0.1 - - [19/May/2017:10:53:16 +0200] "GET /Sneak/ HTTP/1.1" 200 3328
+127.0.0.1 - - [19/May/2017:10:53:16 +0200] "GET /Sneak/resources/css/styles.css;jsessionid=A080D5A3C84AB580430CEB7D143EC602 HTTP/1.1" 200 5024
+127.0.0.1 - - [19/May/2017:11:37:20 +0200] "GET /Sneak/config HTTP/1.1" 200 2271
+127.0.0.1 - - [19/May/2017:11:37:20 +0200] "GET /Sneak/resources/css/styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/May/2017:11:37:21 +0200] "GET /Sneak/index HTTP/1.1" 200 3284
+127.0.0.1 - - [19/May/2017:11:37:21 +0200] "GET /Sneak/config HTTP/1.1" 200 2271
+127.0.0.1 - - [19/May/2017:11:37:23 +0200] "GET /Sneak/index HTTP/1.1" 200 3284
+127.0.0.1 - - [19/May/2017:11:37:31 +0200] "POST /Sneak/cargaExcel HTTP/1.1" 200 3357
+127.0.0.1 - - [19/May/2017:11:37:34 +0200] "POST /Sneak/cargaExcel HTTP/1.1" 200 3357

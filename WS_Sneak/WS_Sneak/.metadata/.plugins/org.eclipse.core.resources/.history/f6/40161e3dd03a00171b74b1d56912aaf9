@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Sneak</title>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<span class="navbar-brand">Sneak</span>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="index">INICIO</a></li>
+					<li><a id="go-config" href="config">CONFIGURACIÓN</a></li>
+				</ul>
+				<div id="cargaXls">
+					<form:form method="post" enctype="multipart/form-data" action="cargaExcel">
+				        <input id="xls-input-file" type="file" name="file"/>
+						<input class="xls-btn-submit" type="submit" value="CARGAR"/>
+					</form:form>
+				</div>
+				<span class="labelXls"><label for="xls-input-file">EXCEL</label></span>
+			</div>
+		</nav>
+	</header><br>
+	<section>
+		<div class="section-main">
+			<div class="sub-section">
+				<form id="select-resp-carga" method="POST" action="respCarga">
+				<c:set var="responsable" value="${estadisticas.getResponsable()}"/>
+					<select id="index-select" name="respSelected">
+						<option selected disabled>-- Responsables --</option>
+						<%
+							Class.forName("com.mysql.cj.jdbc.Driver");
+							String url = "jdbc:mysql://localhost:3306/sneak?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+							Connection conex = null;
+							conex = DriverManager.getConnection(url,"root","");
+							ResultSet rs = conex.createStatement().executeQuery("SELECT * FROM snk_conf WHERE clave= 'responsable'");
+							
+							while (rs.next()) {
+								String auxResp = rs.getString(3);
+								out.println("<option>"+auxResp+"</option>");	
+							}
+							
+							conex.close(); // Conexión cerrada
+						%>
+					</select>
+						<input style="display: none;" id="btn-submit-select-respCarga" type="submit">
+				</form>
+				<script>
+					$("#index-select").change(function() {
+						$("#btn-submit-select-respCarga").click();
+					});
+				</script>
+				<c:set var="blanca_completa" value="${estadisticas.getStr_blank_completa()}"/>
+				<c:set var="blanca_catalogada" value="${estadisticas.getStr_blank_catalogada()}"/>
+				<c:set var="blanca_sin_tocar" value="${estadisticas.getStr_blank_sin_tocar()}"/>
+				
+				<c:set var="catalog_completa" value="${estadisticas.getStr_catalog_completa()}"/>
+				<c:set var="catalog_recatalogada" value="${estadisticas.getStr_catalog_recatalogada()}"/>
+				<c:set var="catalog_sin_tocar" value="${estadisticas.getStr_catalog_sin_tocar()}"/>
+				
+				<c:set var="responsable_back" value="${estadisticas.getResponsable()}"/>
+				
+
+				<div id="stats">
+					<div id="stats1">
+						<span id="stats-input-span-complet">Completas</span>
+						<span class="stats-input-span">Catalogadas</span>
+						<span class="stats-input-span">Sin tocar</span><br>
+						<span class="stats-span">Blancas</span>
+						<input id="stats-input-complet" class="stats-input" type="text" readonly value="${blanca_completa}">
+						<input class="stats-input" type="text" readonly value="${blanca_catalogada}">
+						<input class="stats-input" type="text" readonly value="${blanca_sin_tocar}">
+					</div>
+					<div id="stats2">
+						<span id="stats-input-span-complet">Completas</span>
+						<span class="stats-input-span2">Recatalogadas</span>
+						<span class="stats-input-span2" >Sin tocar</span><br>
+						<span class="stats-span2">Catalogadas</span>
+						<input id="stats-input-complet2" class="stats-input2" type="text" readonly value="${catalog_completa}">
+						<input class="stats-input" type="text" readonly value="${catalog_recatalogada}">
+						<input class="stats-input" type="text" readonly value="${catalog_sin_tocar}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<c:set var="showMsg" value="${quote.msg}"/>
+		<c:choose>
+			
+			<c:when test="${showMsg == 'No se encuentra el autoincremental para la tabla snk_rep_carga.'}">
+		    	<script>alert("${showMsg}")</script>
+		    </c:when>
+		    <c:when test="${showMsg == '¡Ese fichero ya ha sido cargado!. Se utiliza ese fichero para obtener las estadísticas.'}">
+		  		<script>alert("${showMsg}")</script>
+		    </c:when>
+		    <c:when test="${showMsg == 'Se ha producido un error al cargar el fichero.'}">
+		  		<script>alert("${showMsg}")</script>
+		    </c:when>
+		    <c:when test="${showMsg == 'Hubo algún error intentando insertar la cabecera.'}">
+		    	<script>alert("${showMsg}")</script>
+		    </c:when>
+		    <c:when test="${showMsg == 'La carga se ha realizado correctamente.'}">
+		    	<script>alert("${showMsg}")</script>
+		    </c:when>
+		     <c:when test="${showMsg == 'Introduzca un fichero válido.'}">
+		    	<script>alert("${showMsg}")</script>
+		    </c:when>
+		</c:choose>
+	</section>
+</body>
+</html>

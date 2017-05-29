@@ -1,0 +1,313 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 21, 2017, 1:52:17 PM
+    Author     : y9c2rf
+*/
+
+/************************** HEADER ***************************/
+
+.navbar-default {
+  background-color: #4894b7;
+}
+.navbar {
+  border: 0px;
+  border-radius: 0px;
+  min-height: 80px;
+}
+
+.navbar-nav {
+  padding-top: 5px;
+  padding-left: 150px;
+}
+
+.container-fluid div.navbar-header, ul.nav.navbar-nav {
+  padding-top: 15px;
+  font-size: 1.6em;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  font-size: 4em;
+  
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+  padding-left: 10px;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  background-color: white;
+  border: 0.1px solid #00b7ff;
+  color: #00b7ff;
+}
+
+.inConfig {
+	background-color: white !important;
+  	border: 0.1px solid #00b7ff !important;
+	color: #00b7ff !important;
+}
+
+.navbar-default-active-index {
+  background-color: white !important;
+  border: 0.1px solid #00b7ff !important;
+  color: #00b7ff !important;
+}
+
+.navbar-default-active-config {
+  background-color: white !important;
+  border: 0.1px solid #00b7ff !important;
+  color: #00b7ff !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  border: solid #4894b7 1px;
+}
+
+.row {
+  margin-right: 0px;
+}
+
+#cargaXls {
+	background-color: white;
+	border-radius: 5px;
+	position: absolute;
+	right: 78px;
+	margin-top: 50px;
+	width: 27%;
+}
+
+.xls-btn-submit {
+	position: absolute;
+	right: 1.5px;
+	margin-top: -23px;
+	background-color: #4894b7;
+	color: #fff;
+	border: 1px solid #4894b7;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.xls-btn-submit:hover, .xls-btn-submit:focus {
+	background-color: #fff;
+	color: #4894b7;
+}
+
+.xls-btn-submit:active {
+	background-color: #4894b7;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.labelXls {
+	position: absolute;
+	right: 250px;
+	margin-top: 0px;
+	color: #fff;
+	margin-top: 25px;
+	font-size: 1.2em;
+	letter-spacing: 4px;
+}
+
+/********************** BODY *************************/
+
+#index-select:first-child {
+	font-weight: bold;
+	color: #4894b7;
+}
+
+.section-main {
+  background-color: #4894b7;
+  height: 450px;
+  position: relative;
+}
+
+.sub-section {
+  background-color: white;
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  margin-top: 35px;
+  margin-left: 80px;
+  border-radius: 40px;
+}
+
+#index-select {
+  position: absolute;
+  margin: 45px 0px 0px 80px;
+  font-size: 1.2em;
+}
+
+#btn-submit-select-respCarga {
+	display: none;
+}
+
+#container-resp-selected {
+	position: absolute; 
+	margin: 44px 0px 0px 285px;
+  	font-size: 1.2em;
+  	font-weight: bold;
+	color: #4894b7;
+}
+
+#config-select {
+	width: 230px;
+	overflow: hidden;
+}
+
+#config-select option:nth-child(2n) {
+	background-color: #e6e6e6;
+}
+
+select option {
+  margin: 7px;
+}
+
+#config-select-title {
+	color: #4894b7;
+	font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: 3px;
+	position: absolute;
+	margin: 60px 0px 0px 108px;
+}
+
+#config-content {
+  position: absolute;
+  margin: 100px 0px 0px 80px;
+}
+
+#config-subContent {
+	position: absolute;
+	left: 240px;
+	top: 45px;
+}
+
+#blancas-id {
+  position: absolute;
+  right: 550px;
+  top: 50px;
+  text-align: center;
+  color: #4894b7;
+  font-weight: bold;
+}
+
+#catalog-id {
+  position: absolute;
+  right: 200px;
+  top: 50px;
+  text-align: center;
+  color: #4894b7;
+  font-weight: bold;
+}
+
+#blancas-id input {
+  margin-bottom: 15px;
+}
+
+#catalog-id input {
+  margin-bottom: 15px;
+}
+
+#add-resp {
+  position: absolute;
+  left: 35px;
+}
+
+#delete-resp {
+  position: absolute;
+  left: 35px;
+  top: 60px;
+}
+
+#insert-resp-input {
+  margin-left: 150px;
+  width: 200px;
+  border: 0;
+  border-bottom: 2px solid #4894b7;
+}
+
+#insert-resp-input:hover {
+	border-bottom: 2px solid #00b7ff;
+}
+
+#insert-resp-input:focus {
+	border-bottom: 2px solid #00b7ff;
+}
+
+.btn-config-section {
+  color: #fff;
+  background-color: #4894b7;
+  border: 1px solid #4894b7;
+  font-weight: bold;
+  width: 95px ;
+  height: 26px;
+}
+
+.btn-config-section:hover {
+  color: #00b7ff;
+  background-color: #fff;
+  border: 1px solid #4894b7;
+  font-weight: bold;
+}
+
+#stats {
+	position: absolute;
+	margin: 125px 0px 0px 115px;
+	font-size: 1.4em;
+}
+
+#stats1 {
+	margin-top: -20px;
+}
+
+#stats2 {
+	margin-top: 50px;
+}
+
+.stats-span, .stats-span2 {
+	margin-left: 50px;
+}
+
+.stats-span, .stats-span2 {
+	font-weight: bold;
+	color: #4894b7;
+}
+
+.stats-input {
+	margin-left: 120px;
+}
+
+#stats-input-complet {
+	margin-left: 100px;
+}
+
+#stats-input-complet2 {
+	margin-left: 59px;
+}
+
+.stats-input-span {
+	margin-left: 235px;
+	color: #4894b7;
+}
+
+.stats-input-span2 {
+	margin-left: 225px;
+	color: #4894b7;
+}
+
+#stats-input-span-complet {
+	margin-left: 290px;
+	color: #4894b7;
+}

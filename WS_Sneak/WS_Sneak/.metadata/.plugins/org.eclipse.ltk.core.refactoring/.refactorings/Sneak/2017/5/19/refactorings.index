@@ -1,0 +1,16 @@
+1494316393664	Copy file
+1494318434551	Delete element
+1494323312275	Move 'dispatcher-servlet.xml' to 'WEB-INF'
+1494323814897	Move 'tema1' to 'webapp'
+1494323819790	Delete element
+1494323852435	Rename resource 'tema1'
+1494324288443	Move 'theme1' to 'views'
+1494324625785	Move 'css' to 'resources'
+1494324627959	Move 'js' to 'resources'
+1494324630912	Delete element
+1494330200667	Move 'resources' to 'webapp'
+1494331249528	Move 'resources' to 'views'
+1494331282609	Move 'resources' to 'webapp'
+1494517303385	Rename type 'ExcelUtil'
+1494517355309	Rename type 'RepartoUtil'
+1494590421558	Copy method

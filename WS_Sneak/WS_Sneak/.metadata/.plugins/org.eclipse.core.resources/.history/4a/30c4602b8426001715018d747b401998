@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html">
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Configuración</title>
+</head>
+<body>
+	<header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <span class="navbar-brand">Sneak</span>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a id="go-index" href="http://localhost:8080/Sneak/">INICIO</a></li>
+            <li><a id="go-config" href="responsable/config">CONFIGURACIÓN</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header><br>
+	<section>
+		<div class="temp-container1">
+        	<div class="temp-cont-form">
+				<form method="post" action="responsable">
+					<select style="width: 297px;" id="select2" size="10" name="respSelected">
+						<c:forEach items="${configuracion.responsable}" var="c">
+	   						 <option>${c}</option>
+						</c:forEach>
+					</select><br>
+				<div>
+					<input style="width: 297px" type="text" name="responsable" placeholder="Introduzca un responsable." maxlength="50">
+				</div>
+				<div class="temp-button-add">
+					<input type="submit" name="add" value="AÑADIR">
+				</div>
+				<div class="temp-button-remove">
+					<input type="submit" name="delete" value="ELIMINAR">
+				</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
