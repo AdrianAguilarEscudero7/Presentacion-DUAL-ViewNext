@@ -1,5 +1,5 @@
 # Presentación de Sneak.
-## Presentación hecha con la herramienta Slides de, ![](https://slides.com/) que usa el framework Reveal.js.
+## Presentación hecha con la herramienta Slides de, [https://slides.com/](https://slides.com/) que usa el framework Reveal.js.
 
 ## Algunas capturas de la aplicación.
 ### Índice
