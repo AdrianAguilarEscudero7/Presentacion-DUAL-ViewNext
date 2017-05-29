@@ -3,6 +3,6 @@
 
 ## Algunas capturas de la aplicación.
 ### Índice
-![Index](Presentacion-DUAL-ViewNext/Imagenes_presentacion/captura12.png)
+![Índice](Imagenes_presentacion/Captura12.png)
 ### Configuración
-![Configuración](Presentacion-DUAL-ViewNext/Imagenes_presentacion/captura11.png)
+![Configuración](Imagenes_presentacion/Captura11.png)
